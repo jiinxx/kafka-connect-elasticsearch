@@ -23,3 +23,13 @@ if all goes well you should now be able to query elasticsearch for your data
 curl http://127.0.0.1:9200/quickstart-jdbc-test/_search?pretty
 ```
 
+Note
+-
+Checking the status of a connector (the jdbc-one in this case)
+```bash
+curl -s -X GET http://localhost:8083/connectors/quickstart-jdbc-source/status | python -mjson.tool
+```
+Removing a connector (also jdbc)
+```bash
+curl -X DELETE -H "Content-Type: application/json" http://localhost:8083/connectors/quickstart-jdbc-source
+```
